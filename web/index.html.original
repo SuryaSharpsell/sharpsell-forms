@@ -103,11 +103,13 @@
 
 
 
+
     </style>
     <script>
   window.flutterConfiguration = {
     canvasKitBaseUrl: "canvaskit/"
   };
+
 
 
 
@@ -127,8 +129,10 @@
 
           Moengage = moe({
             app_id:"SQ7MG6V1RUFGZTDKZQVRNK2D", // replace "XXXXXXXXXXX" with the APP ID you get from the dashboard
-            debug_logs: 0
+            debug_logs: 0,
+            swPath: "/serviceworker.js"
           });
+
 
 
 
@@ -163,6 +167,7 @@
 
 
 
+
 </script>
 <!-- This script adds the flutter initialization JS code -->
 <script src="flutter.js" defer></script>
@@ -185,6 +190,7 @@
     // any other options for pdfjsLib.getDocument.
     // params: {}
   };
+
 
 
 
@@ -233,6 +239,7 @@
 
 
 
+
 </script>
 <script>
   (function() {
@@ -250,11 +257,13 @@
 
 
 
+
 </script>
 <script>
     function clearCookies() {
       document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
     }
+
 
 
 
@@ -314,6 +323,7 @@
     window.onload = function() {
       move();
     };
+
 
 
 
