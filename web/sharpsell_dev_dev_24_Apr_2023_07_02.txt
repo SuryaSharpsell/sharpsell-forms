@@ -1,0 +1,6 @@
+ENV_BASE_URL = https://sharpsell-core-dev.enparadigmtech.com
+ENV_LEADGEN_BASE_URL = 
+ENV_SMARTSKILL_BASE_URL = https://sharpsell-core-dev.enparadigmtech.com
+COMPANY = dev
+ENVIRONMENT = dev
+ENV_COMPANY_ID =  

@@ -1,0 +1,54 @@
+@import './constants.css';
+
+.loading-container{
+    width: 100%;
+    justify-content: center;
+}
+
+.loading-text{
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 36px;
+    font-family: TextFont;
+}
+
+.load-background {
+  position: relative;
+  width: 215px;
+  height: 4px;
+  background-color: var(--secondary_color);
+  top: 50%;
+}
+
+.loading-icon{
+    width: 100px;
+    height: 100px;
+    margin-top: 25%;
+}
+
+.load-runner {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.load-runner:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background-color:  var(--primary_color);
+    animation: load-runner_first 1.5s infinite ease-out;
+}
+
+@keyframes load-runner_first {
+    0% {
+        left: -50%;
+        width: 100%;
+    }
+    100% {
+        left: 50%;
+        width: 100%;
+    }
+}

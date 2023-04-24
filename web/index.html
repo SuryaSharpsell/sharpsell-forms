@@ -1,89 +1,354 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base href="/">
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
 
-  <meta charset="UTF-8" />
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-  <meta name="description" content="A new Flutter project." />
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
 
-<!--  <script src="https://unpkg.com/canvaskit-wasm@0.37.1/bin/canvaskit.js"></script>-->
-<!--  <link rel="preload" href="https://unpkg.com/canvaskit-wasm@0.37.1/bin/canvaskit.wasm" as="fetch" crossOrigin="anonymous">-->
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-<!--  <script rel="prefetch">-->
-<!--  window.flutterConfiguration = {-->
-<!--    canvasKitBaseUrl: "canvaskit/"-->
-<!--  };-->
-<!--</script>-->
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
+    <!--  <base href="/app/">-->
+    <!--  This is new href from core service-->
+    <!--    <base href="/app/">-->
 
-<!--  &lt;!&ndash; iOS meta tags & icons &ndash;&gt;-->
-<!--  <meta name="apple-mobile-web-app-capable" content="yes" />-->
-<!--  <meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
-<!--  <meta name="apple-mobile-web-app-title" content="enp_launchpad_ai" />-->
-<!--  <link rel="apple-touch-icon" href="icons/Icon-192.png" />-->
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
 
-  <!-- Favicon -->
-<!--  <link rel="icon" type="image/png" href="favicon.png" />-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
-  <title>Sharpsell Forms</title>
-  <link rel="manifest" href="manifest.json" />
-  <style>
-      .lds-ripple {
-        display: inline-block;
-        position: relative;
-        width: 80px;
-        height: 80px;
-      }
-      .lds-ripple div {
-        position: absolute;
-        border: 4px solid #fcf;
-        opacity: 1;
-        border-radius: 50%;
-        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-      }
-      .lds-ripple div:nth-child(2) {
-        animation-delay: -0.5s;
-      }
-      @keyframes lds-ripple {
-        0% {
-          top: 36px;
-          left: 36px;
-          width: 0;
-          height: 0;
-          opacity: 1;
-        }
-        100% {
-          top: 0px;
-          left: 0px;
-          width: 72px;
-          height: 72px;
-          opacity: 0;
-        }
-      }
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="baseapp">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- App icon -->
+    <link rel="icon" type="image/png" href="app_icon.png"/>
+
+    <!-- APP_NAME is being set from link-company script -->
+    <title>Sharpsell Core Dev</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="loading-screen.css">
+    <link rel="stylesheet" href="css/w3.css">
+
+    <style>
+    @font-face {
+    font-family:"TextFont";
+    src: url("font.ttf") format("truetype");
+    }
+    body {
+      background: #333333;
+    }
+
+    .w3-green{
+      background-color: #AE1E57 !important;
+    }
+
+    .vertical-center {
+      background-color: white !important;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    ul {
+      position: relative;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      text-align: center;
+      
+      margin: 10px;
+    }
+    span {
+      background-color: #00C430;
+      padding: 5px 10px 5px 10px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .v1238 {
+      color: #101829;
+      font-family: Inter;
+      font-weight: Semi Bold;
+      font-size: 16px;
+      opacity: 1;
+    }
+    .v1238 {
+      color: #485567;
+      font-family: Inter;
+      font-weight: Regular;
+      font-size: 14px;
+      opacity: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     </style>
-  <script>
-          function clearCookies() {
-    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    <script>
+  window.flutterConfiguration = {
+    canvasKitBaseUrl: "canvaskit/"
+  };
 
-}
-      </script>
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <script type="text/javascript">
+          (function(i,s,o,g,r,a,m,n){i.moengage_object=r;t={};q=function(f){return function(){(i.moengage_q=i.moengage_q||[]).push({f:f,a:arguments})}};f=['track_event','add_user_attribute','test222','222test','test9@test9.com','9999999999','name name','add_gender','add_birthday','destroy_session','bd5c73ca-a5f4-11ed-a31d-0242ac150002','moe_events','call_web_push','track','location_type_attribute'],h={onsite:["getData","registerCallback"]};for(k in f){t[f[k]]=q(f[k])}for(k in h)for(l in h[k]){null==t[k]&&(t[k]={}),t[k][h[k][l]]=q(k+"."+h[k][l])}a=s.createElement(o);m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);i.moe=i.moe||function(){n=arguments[0];return t};a.onload=function(){if(n){i[r]=moe(n)}}})(window,document,'script','https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js','Moengage')
+
+
+          Moengage = moe({
+            app_id:"SQ7MG6V1RUFGZTDKZQVRNK2D", // replace "XXXXXXXXXXX" with the APP ID you get from the dashboard
+            debug_logs: 0
+          });
+
+
+
+
+
+
+
+
+
+    </script>
 </head>
-<body>
+<body style="position: fixed; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; font: none; color: none;background-color: white;">
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
 
-<div style="position: fixed; width: 100%; height: 100%; inset: 0px; overflow: hidden; padding: 0px; margin: 0px; user-select: none; touch-action: none; font: 14px sans-serif; color: white; background-color: #173B9F;">
-  <div style="display: flex; align-items: flex-end; min-width: 100%; min-height: 100%; justify-content: center; align-items: center;" >
-    <div class="lds-ripple"><div></div><div></div></div>
-  </div>
-</div>
+<script src="firebase-app.js"></script>
+<script src="firebase-messaging.js"></script>
+<script src="firebase-analytics.js"></script>
+<script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = '1883131092';
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<!-- This script adds the flutter initialization JS code -->
+<script src="flutter.js" defer></script>
+
+<!-- Firebase Configuration -->
+<script defer src="firebase-config-web.js"></script>
+
+
+<script src="hls.js" type="application/javascript"></script>
+<script defer src="sql-wasm.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
+<script type="text/javascript">
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
+     pdfRenderOptions = {
+    // where cmaps are downloaded from
+    cMapUrl: "https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/cmaps/",
+    // The cmaps are compressed in the case
+    cMapPacked: true,
+    // any other options for pdfjsLib.getDocument.
+    // params: {}
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("flutter-first-frame", function () {
-          navigator.serviceWorker.register("flutter_service_worker.js");
-        });
-      }
-    </script>
-<script rel="prefetch" src="main.dart.js" type="application/javascript"></script>
+    var serviceWorkerVersion = null;
+    var scriptLoaded = false;
 
+    function hideElement(){
+      document.getElementById("loading-container").style.display = "none";
+    }
+
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        hideElement();
+        return appRunner.runApp();
+      });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script>
+  (function() {
+    document.querySelector("base").href = window.location.protocol+'//'+window.location.host +window.location.pathname;
+  })();
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script>
+    function clearCookies() {
+      document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<script>
+    var index = 0;
+    function move() {
+      var messages = ["Initializing system resources...","Establishing network connection...","Loading data from the server...","Preparing user interface","Rendering visual elements...","Optimizing performance...","Finalizing setup...","Ready to go..."];
+      var elem = document.getElementById("myBar");   
+      var width = 1;
+      
+      var id = setInterval(frame, 30);
+      function frame() {
+        if (width >= 100) {
+          clearInterval(id);
+          width =0;
+          index ++;
+          if(index>=messages.length)
+          {
+            index = 0;
+          }
+          document.getElementById('counter').innerHTML = messages[index];
+          move();
+        } else {
+          width++; 
+          elem.style.width = width + '%'; 
+        
+        }
+      }
+    }
+    
+    function func_code() {
+        var codes = "100000,100004,100007,100009,100012";
+        var code_arr = codes.split(',');
+        for (i = 0;i < code_arr.length;i++) {
+            (function(i){
+                setTimeout(function(){ 
+                    change_number(code_arr[i]);
+                }, 2000*i);
+            })(i)
+        }
+    }
+                      
+    function change_number(i) {
+        document.getElementById('counter').innerHTML = i;
+    }
+    
+    window.onload = function() {
+      move();
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<div class="loading-container" id="loading-container">
+    <center>
+        <div class="container vertical-center">
+            <ul>
+                <li><img src="image/loader.gif" height="150"/></li>
+                <li>
+                    <div style="width: 426px; font-weight: 600 !important;"><p class="v1238:89513">
+                        Initialising first-time setup procedures. This might take up to 1 minute,
+                        but will be quicker on
+                        future visits</p></div>
+                </li>
+                <li>
+                    <div class="w3-light-grey w3-round">
+                        <div id="myBar" class="w3-green w3-round" style="height:6px;width:0"></div>
+                    </div>
+                </li>
+                <li><p class="v1238:89518" id="counter" style="color: #475467 !important">
+                    Initializing system resources...</p></li>
+            </ul>
+        </div>
+    </center>
+</div>
 </body>
 </html>
